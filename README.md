@@ -5,6 +5,8 @@ Sistema Gestión Equipos Médicos CCDM
 
 Este proyecto personal tiene como tarea, ayudarme en la Gestión de Equipos Médicos de la Clínica Ciudad del Mar.
 Si resulta, es probable que obtenga una licencia CC y la distribuya de forma gratuita.
+OJO: EL PROYECTO AÚN NO ESTÁ LISTO! ASÍ QUE SI LO BAJAS AHORA, NO FUNCIONARÁ. :(
+
 Su objetivo incluye todas las tareas que realizo en el trabajo.
 - Tener registro de los proveedores (Empresas y las personas de contacto)
 - Registro de las Ordenes de Compra emitidas
