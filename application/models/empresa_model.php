@@ -8,9 +8,9 @@ class Empresa_model extends CI_Model {
     
     //Función para crear una nueva empresa
     function crearEmpresa($data){
-        $this->db->insert('empresas', 
+        $this->db->insert('empresa', 
                 array(
-                    'nombreEmpresa'=>$data['nomEmpresa'], 
+                    'nomempresa'=>$data['nomempresa'], 
                     'rut'=>$data['rut'],
                     'dircomercial'=>$data['dircomercial'], 
                     'dirst'=>$data['dirst'], 
@@ -23,7 +23,7 @@ class Empresa_model extends CI_Model {
     
     //Función para recoger la lista completa de las empresas
     function obtenerEmpresas(){
-        $query = $this->db->get('empresas');
+        $query = $this->db->get('empresa');
         if($query->num_rows()>0) return $query;
         else return false;
     }
@@ -31,7 +31,7 @@ class Empresa_model extends CI_Model {
     //Función para recoger la información de 1 empresa en particular
     function obtenerEmpresa($codempresa){
         $this->db->where('codempresa', $codempresa);  
-        $query = $this->db->get('empresas');
+        $query = $this->db->get('empresa');
         if($query->num_rows()>0) return $query;
         else return false;
     }
@@ -39,7 +39,7 @@ class Empresa_model extends CI_Model {
     //Función que actualiza los datos de 1 empresa en la db
     function actualizarEmpresa($codempresa,$data){
         $datos = array(
-                    'nombreEmpresa'=>$data['nomEmpresa'], 
+                    'nomempresa'=>$data['nomempresa'], 
                     'rut'=>$data['rut'],
                     'dircomercial'=>$data['dircomercial'], 
                     'dirst'=>$data['dirst'], 
@@ -48,13 +48,13 @@ class Empresa_model extends CI_Model {
                     'alias'=>$data['alias'], 
                     'www'=>$data['www']       
                 );
-        $this->db->where('codEmpresa', $codempresa);
-        $query = $this->db->update('empresas',$datos);
+        $this->db->where('codempresa', $codempresa);
+        $query = $this->db->update('empresa',$datos);
     }
     
     //Función que elimina la empresa seleccionada
-    function eliminarEmpresa($id){
-        $this->db->delete('empresas',array('idEmpresa'=>$id));
+    function eliminarEmpresa($codempresa){
+        $this->db->delete('empresa',array('codEmpresa'=>$codempresa));
     }
 }
 

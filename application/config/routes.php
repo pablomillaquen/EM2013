@@ -38,7 +38,8 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "frontpage";
+$route['nuevo'] = "empresa/nuevo";
 $route['404_override'] = '';
 
 

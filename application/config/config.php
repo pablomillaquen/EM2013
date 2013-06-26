@@ -14,7 +14,23 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/codeigniter';
+$config['base_url']	= 'http://localhost/em2013';
+
+/*
+|--------------------------------------------------------------------------
+| Content Delivery Network URL
+|--------------------------------------------------------------------------
+|
+| Loading content like .js, .png, .css files on a CDN is much better. 
+| This allows you to support CDNs.
+|
+|	http://example.com/
+|
+| Use the normal base_url() function and upload your /assets and /content
+| to the CDN. 
+|
+*/
+$config['cdn_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +85,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'spanish';
 
 /*
 |--------------------------------------------------------------------------
@@ -341,7 +357,7 @@ $config['time_reference'] = 'local';
 | in your view files.  Options are TRUE or FALSE (boolean)
 |
 */
-$config['rewrite_short_tags'] = FALSE;
+$config['rewrite_short_tags'] = TRUE;
 
 
 /*
@@ -357,6 +373,22 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+/*
+| -------------------------------------------------------------------
+|  Native Auto-load
+| -------------------------------------------------------------------
+| 
+| Nothing to do with config/autoload.php, this allows PHP autoload to work
+| for base controllers and some third-party libraries.
+|
+*/
+function __autoload($class)
+{
+	if(strpos($class, 'CI_') !== 0)
+ 	{
+  		@include_once( APPPATH . 'core/'. $class . EXT );
+ 	}
+}
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
