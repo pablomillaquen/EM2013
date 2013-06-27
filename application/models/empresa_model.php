@@ -69,8 +69,6 @@ class Empresa_model extends CI_Model {
             foreach($empresas as $empresa){
                 $dropDownList[$empresa->codempresa] = $empresa->alias;
                 }
-        //$dropDownOptions = array('' => 'SELECT', '0' => 'None');
-        //$finalDropDown = $dropDownOptions + $dropDownList;
         $finalDropDown = $dropDownList;
         return $finalDropDown;
         }

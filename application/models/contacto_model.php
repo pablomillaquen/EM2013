@@ -47,7 +47,7 @@ class Contacto_model extends CI_Model {
                     'fonofijo'=>$data['fonofijo'], 
                     'celular'=>$data['celular'], 
                     'email'=>$data['email'], 
-                    'codcontacto'=>$data['codcontacto'], 
+                    'codempresa'=>$data['codempresa'], 
                     'fax'=>$data['fax']       
                 );
         $this->db->where('codcontacto', $codcontacto);

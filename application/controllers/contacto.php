@@ -16,6 +16,8 @@ class Contacto extends CI_Controller {
         //Si NO hay un valor en el tercer parámetro, envía la lista completa
         if(!$data['segmento']){
             $data['contactos']=$this->contacto_model->obtenerContactos();
+            $data['empresas']=$this->empresa_model->obtenerEmpresas();
+            
         }
         //En caso contrario, presenta la información de esa contacto
         else{
@@ -92,6 +94,7 @@ class Contacto extends CI_Controller {
     function verFicha(){
         $data['segmento']= $this->uri->segment(3);
         $data['contactos']=$this->contacto_model->obtenerContacto($data['segmento']);
+        $data['empresas']=$this->empresa_model->obtenerEmpresas();
         //Carga el encabezado y el formulario con los datos actuales
         $this->load->view('include/header');
         $this->load->view('contactos/sidebar');

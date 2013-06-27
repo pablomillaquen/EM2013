@@ -2,6 +2,7 @@
 <?
  foreach ($contacto->result() as $row){ 
      $nomcontacto= $row->nomcontacto; 
+     $apellcontacto= $row->apellcontacto;
      $cargo= $row->cargo;
      $departamento= $row->departamento;
      $fonofijo= $row->fonofijo;
@@ -15,6 +16,11 @@
         'name'=> 'nomcontacto',
         'placeholder'=>'Escribe el nombre',
         'value' =>$nomcontacto
+    );
+ $apellcontacto =array(
+        'name'=> 'apellcontacto',
+        'placeholder'=>'Escribe el apellido',
+        'value' =>$apellcontacto
     );
  $cargo =array(
         'name'=> 'cargo',
@@ -54,6 +60,9 @@
 ?>
 <?= form_label('Nombre', 'nomcontacto') ?>
 <?= form_input($nomcontacto) ?>
+<br>
+<?= form_label('Apellido', 'apellcontacto') ?>
+<?= form_input($apellcontacto) ?>
 <br>
 <?= form_label('Cargo','cargo') ?>
 <?= form_input($cargo) ?>

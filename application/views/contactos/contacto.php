@@ -5,6 +5,7 @@ if($contactos){?>
       <thead>
     <tr>
         <th>Nombre Contacto</th>
+        <th>Apellido Contacto</th>
         <th>Empresa</th>
         <th>Cargo</th>
         <th>Celular</th>
@@ -16,7 +17,13 @@ if($contactos){?>
 <?
     foreach ($contactos->result() as $contacto) { 
         echo "<tr><td>".$contacto->nomcontacto."</td>";
-        echo "<td>".$contacto->codempresa."</td>";
+        echo "<td>".$contacto->apellcontacto."</td>";
+        foreach($empresas->result() as $empresa){
+            if($empresa->codempresa==$contacto->codempresa){
+                    echo "<td>".$empresa->alias."</td>";
+                }
+        }
+        //echo "<td>".$contacto->codempresa."</td>";
         echo "<td>".$contacto->cargo."</td>";
         echo "<td>".$contacto->celular."</td>";
         echo "<td><a href=mailto:".$contacto->email.">Enviar Email</a></td>";
