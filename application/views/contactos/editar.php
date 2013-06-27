@@ -3,7 +3,7 @@
  foreach ($contacto->result() as $row){ 
      $nomcontacto= $row->nomcontacto; 
      $cargo= $row->cargo;
-     $depto= $row->depto;
+     $departamento= $row->departamento;
      $fonofijo= $row->fonofijo;
      $celular= $row->celular;
      $email= $row->email;
@@ -21,10 +21,10 @@
         'placeholder'=>'Ej.: Representante de Ventas',
         'value' =>$cargo
      );
- $depto =array(
-        'name'=> 'depto',
+ $departamento =array(
+        'name'=> 'departamento',
         'placeholder'=>'Ej: Depto. Medicina',
-        'value' =>$depto
+        'value' =>$departamento
      );
  $fonofijo =array(
         'name'=> 'fonofijo',
@@ -58,8 +58,8 @@
 <?= form_label('Cargo','cargo') ?>
 <?= form_input($cargo) ?>
 <br>
-<?= form_label('Departamento','depto') ?>
-<?= form_input($depto) ?>
+<?= form_label('Departamento','departamento') ?>
+<?= form_input($departamento) ?>
 <br>
 <?= form_label('Teléfono Fijo','fonofijo') ?>
 <?= form_input($fonofijo) ?>

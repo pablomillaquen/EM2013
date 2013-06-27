@@ -70,9 +70,10 @@
             </p>
             <ul class="nav">
               <li class="active"><a href="<?php echo base_url('index.php');?>">Inicio</a></li>
-              <li><a href="#equipos">Equipos</a></li>
               <li><a href="<?php echo base_url('index.php/empresa');?>">Proveedores</a></li>
               <li><a href="#oc">Ordenes de Compra</a></li>
+              <li><a href="#equipos">Equipos</a></li>
+              <li><a href="#equipos">Instrumental</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

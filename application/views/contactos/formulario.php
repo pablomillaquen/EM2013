@@ -10,59 +10,61 @@
         'name'=> 'nomcontacto',
         'placeholder'=>'Nombre de la contacto'
     );
- $rut =array(
-        'name'=> 'rut',
-        'placeholder'=>'Ej.: 12.345.678-9'
+ $cargo =array(
+        'name'=> 'cargo',
+        'placeholder'=>'Ej.: Jefe de Ventas'
      );
- $dircomercial =array(
-        'name'=> 'dircomercial',
-        'placeholder'=>'Calle, Comuna, Ciudad'
+ $departamento =array(
+        'name'=> 'departamento',
+        'placeholder'=>'Ej: División Imagenología'
      );
- $dirst =array(
-        'name'=> 'dirst',
-        'placeholder'=>'Si la dirección es diferente a la comercial'
+ $fonofijo =array(
+        'name'=> 'fonofijo',
+        'placeholder'=>'+56322451127'
      );
- $telefono =array(
-        'name'=> 'telefono',
-        'placeholder'=>'Ej: +56322451127'
+ $celular =array(
+        'name'=> 'celular',
+        'placeholder'=>'Ej: +56972451127'
+     );
+ $email =array(
+        'name'=> 'email',
+        'placeholder'=>'Ej: persona@algo.cl'
+     );
+ $codempresa =array(
+        'name'=> 'codempresa',
+        'placeholder'=>'codigo de la empresa'
      );
  $fax =array(
         'name'=> 'fax',
-        'placeholder'=>'Ej: +56322122435'
-     );
- $alias =array(
-        'name'=> 'alias',
-        'placeholder'=>'Nombre corto de la contacto'
-     );
- $www =array(
-        'name'=> 'www',
-        'placeholder'=>'Ej: http://www.ccdm.cl'
+        'placeholder'=>'+56322122435'
      )
          
 ?>
 <?= form_label('Nombre', 'nomcontacto') ?>
 <?= form_input($nomcontacto) ?>
 <br>
-<?= form_label('R.U.T.','rut') ?>
-<?= form_input($rut) ?>
+<?= form_label('Cargo','cargo') ?>
+<?= form_input($cargo) ?>
 <br>
-<?= form_label('Dirección Comercial','dircomercial') ?>
-<?= form_input($dircomercial) ?>
+<?= form_label('Departamento','departamento') ?>
+<?= form_input($departamento) ?>
 <br>
-<?= form_label('Dirección Serv. Técnico','dirst') ?>
-<?= form_input($dirst) ?>
+<?= form_label('Teléfono Fijo','fonofijo') ?>
+<?= form_input($fonofijo) ?>
 <br>
-<?= form_label('Teléfono','telefono') ?>
-<?= form_input($telefono) ?>
+<?= form_label('Celular','celular') ?>
+<?= form_input($celular) ?>
+<br>
+<?= form_label('Email','email') ?>
+<?= form_input($email) ?>
+<br>
+<?= form_label('Empresa','codempresa') ?>
+<?= form_dropdown('codempresa', $empresas);?>
+<!--?=form_input($codempresa)?-->
+<!--?= form_dropdown('remeras', $opciones, 'large');?>-->
 <br>
 <?= form_label('Fax','fax') ?>
 <?= form_input($fax) ?>
-<br>
-<?= form_label('Nombre Corto','alias') ?>
-<?= form_input($alias) ?>
-<br>
-<?= form_label('Página Web','www') ?>
-<?= form_input($www) ?>
 <br>
 <?= form_submit('','Crear contacto') ?>
 <?= form_close() ?>

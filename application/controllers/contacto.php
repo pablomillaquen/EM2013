@@ -5,7 +5,7 @@ class Contacto extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('contacto_model');
-        
+        $this->load->model('empresa_model');
     }
     //Función principal
     function index(){
@@ -29,9 +29,10 @@ class Contacto extends CI_Controller {
     
     //Formulario para ingreso de nueva contacto
     function nuevo(){
+        $data['empresas'] = $this->empresa_model->dropdownEmpresas();
         $this->load->view('include/header');
         $this->load->view('contactos/sidebar');
-        $this->load->view('contactos/formulario'); 
+        $this->load->view('contactos/formulario',$data); 
         $this->load->view('include/footer');
     }
     
@@ -40,8 +41,9 @@ class Contacto extends CI_Controller {
         //pongo los datos en un array
         $data =array(
             'nomcontacto'=> $this->input->post('nomcontacto'),
+            'apellcontacto'=> $this->input->post('apellcontacto'),
             'cargo'=> $this->input->post('cargo'),
-            'depto'=> $this->input->post('depto'),
+            'departamento'=> $this->input->post('departamento'),
             'fonofijo'=> $this->input->post('fonofijo'),
             'celular'=> $this->input->post('celular'),
             'email'=> $this->input->post('email'),
@@ -75,8 +77,9 @@ class Contacto extends CI_Controller {
      function actualizar(){
         $data =array(
             'nomcontacto'=> $this->input->post('nomcontacto'),
+            'apellcontacto'=> $this->input->post('apellcontacto'),
             'cargo'=> $this->input->post('cargo'),
-            'depto'=> $this->input->post('depto'),
+            'departamento'=> $this->input->post('departamento'),
             'fonofijo'=> $this->input->post('fonofijo'),
             'celular'=> $this->input->post('celular'),
             'email'=> $this->input->post('email'),
@@ -96,6 +99,15 @@ class Contacto extends CI_Controller {
         $this->load->view('include/footer');
         
     }
+    
+    /*function dropdown_empresas(){
+        $resultado = $this->empresa_model->obtenerEmpresas();
+        foreach($resultado as $row){
+		$empresas[$row->codempresa] = $row->nomempresa;
+            }
+	return form_dropdown('empresas', $empresas);
+    }*/
+    
 }
 
 ?>

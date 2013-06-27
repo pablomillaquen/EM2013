@@ -56,6 +56,24 @@ class Empresa_model extends CI_Model {
     function eliminarEmpresa($codempresa){
         $this->db->delete('empresa',array('codEmpresa'=>$codempresa));
     }
+    
+  /*  function dropdownEmpresas(){
+        $query = $this->db->get('empresa');
+        if($query->num_rows()>0) return $query;
+        else return false;
+    }*/
+    
+    function dropdownEmpresas(){
+        $query = $this->db->query('select distinct codempresa, alias from empresa order by alias');
+        $empresas = $query->result();
+            foreach($empresas as $empresa){
+                $dropDownList[$empresa->codempresa] = $empresa->alias;
+                }
+        //$dropDownOptions = array('' => 'SELECT', '0' => 'None');
+        //$finalDropDown = $dropDownOptions + $dropDownList;
+        $finalDropDown = $dropDownList;
+        return $finalDropDown;
+        }
 }
 
 ?>

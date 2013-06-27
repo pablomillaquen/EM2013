@@ -4,7 +4,7 @@ if($contactos){
   <p>Nombre contacto:<?=$contacto->nomcontacto; ?></p>
   <p>Empresa:<?=$contacto->codempresa; ?></p>
   <p>Cargo:<?=$contacto->cargo; ?></p>
-  <p>Departamento:<?=$contacto->depto; ?></p>
+  <p>Departamento:<?=$contacto->departamento; ?></p>
   <p>Teléfono Fijo:<?=$contacto->fonofijo; ?></p>
   <p>Celular:<?=$contacto->celular; ?></p>
   <p>Email:<?=$contacto->email; ?></p>
