@@ -4,8 +4,8 @@ if($contactos){?>
   <table class='table table-striped table-bordered table-condensed'>
       <thead>
     <tr>
-        <th>Nombre Contacto</th>
-        <th>Apellido Contacto</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
         <th>Empresa</th>
         <th>Cargo</th>
         <th>Celular</th>

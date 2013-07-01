@@ -8,8 +8,9 @@ if($empresas){
   <p>Teléfono:<?=$empresa->telefono; ?></p>
   <p>Fax:<?=$empresa->fax; ?></p>
   <p>Página Web:<?=$empresa->www; ?></p>
-  <?= "<a href=empresa/editar/".$empresa->codempresa.">Editar Empresa</a>";
-        }    
+  <a href="<?php echo base_url('index.php/empresa/editar/'.$empresa->codempresa)?>">Editar empresa</a>
+      <?
+          }    
     }
 else{
     echo "<p>No existe la empresa.</p>";
